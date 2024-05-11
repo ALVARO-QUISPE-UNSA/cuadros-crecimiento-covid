@@ -1,3 +1,7 @@
+//npm init -y
+
+//npm install express -E
+
 const express = require('express');
 const app = express();
 
