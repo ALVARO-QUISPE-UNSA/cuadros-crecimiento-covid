@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>División de pantalla en tres secciones</title>
+  <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .top-section, .bottom-section {
+      flex: 1;
+      display: flex;
+    }
+    .left-panel, .right-panel {
+      flex: 1;
+      border: 1px solid #ccc;
+    }
+    .separator {
+      width: 1px;
+      background-color: #ccc;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="top-section">
+      <div class="left-panel">
+        <!-- Contenido del panel izquierdo -->
+        Panel Izquierdo
+        <ul>
+          <li id="Amazonas">Amazonas</li>
+          <li id="Ancash">Áncash</li>
+          <li id="Apurimac">Apurímac</li>
+          <li id="Arequipa">Arequipa</li>
+          <li id="Ayacucho">Ayacucho</li>
+          <li id="Cajamarca">Cajamarca</li>
+          <li id="Callao">Callao</li>
+          <li id="Cusco">Cusco</li>
+          <li id="Huancavelica">Huancavelica</li>
+          <li id="Huanuco">Huánuco</li>
+          <li id="Ica">Ica</li>
+          <li id="Junin">Junín</li>
+          <li id="LaLibertad">La Libertad</li>
+          <li id="Lambayeque">Lambayeque</li>
+          <li id="Lima">Lima</li>
+          <li id="Loreto">Loreto</li>
+          <li id="MadreDeDios">Madre de Dios</li>
+          <li id="Moquegua">Moquegua</li>
+          <li id="Pasco">Pasco</li>
+          <li id="Piura">Piura</li>
+          <li id="Puno">Puno</li>
+          <li id="SanMartin">San Martín</li>
+          <li id="Tacna">Tacna</li>
+          <li id="Tumbes">Tumbes</li>
+          <li id="Ucayali">Ucayali</li>
+        </ul>
+      </div>
+      <div class="separator"></div>
+      <div class="right-panel">
+        <!-- Contenido del panel derecho -->
+        Panel Derecho
+        <ul>
+          <li onclick="" id="1">Confirmados</li>
+          <li onclick="" id="2">Muertos</li>
+          <li onclick="" id="3">Recuperados</li>
+          <li onclick="" id="4">Hosp</li>
+          <li onclick="" id="5">No hosp</li>
+          <li onclick="" id="6">UCI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-section">
+      <div class="left-panel">
+        <!-- Contenido del panel inferior -->
+        Panel Inferior
+        <canvas id="myChart" width="800" height="400" style="max-height: 100px;"></canvas>
+
+        <script>
+          // Datos de casos de COVID-19 en Perú por meses
+          const ejex = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+          const casosPorMes = {
+            labels: ejex,
+            datasets: [{
+              label: 'Casos de COVID-19 en Perú por Meses',
+              data: [3, 5, 100, 1000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+            }]
+          };
+
+          // Configuración del gráfico
+          const config = {
+            type: 'line',
+            data: casosPorMes,
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          };
+
+          // Crear el gráfico
+          var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+          );
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
