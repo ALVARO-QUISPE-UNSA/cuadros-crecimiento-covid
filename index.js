@@ -18,6 +18,10 @@ app.disable('x-powered-by');
 
 app.use(express.static('public'));
 
+app.post('/consulta', (req, res) => {
+  const {departamento, dimension} = req.body;
+});
+
 //app.get('/', (req, res) => {
 //  res.sendFile(path.resolve(__dirname, 'public/problema1/prueba.html'));
 //});
