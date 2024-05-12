@@ -16,9 +16,10 @@ app.disable('x-powered-by');
 //  res.status(200).send('<h1>Hola Mundo</h1>');
 //});
 
-app.use((req, res) => {
-  res.status(400).sendFile(path.join(__dirname, 'pages/dashboard.html'));
-});
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use((req, res) => {
+//  res.sendFile(path.join(__dirname, 'public/prueba.html'));
+//});
 
 
 
