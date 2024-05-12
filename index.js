@@ -18,11 +18,11 @@ app.disable('x-powered-by');
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public/problema1/prueba.html'));
-});
+//app.get('/', (req, res) => {
+//  res.sendFile(path.resolve(__dirname, 'public/problema1/prueba.html'));
+//});
 
-app.get('/p1', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public/problema1/dashboard.html'));
 });
 
