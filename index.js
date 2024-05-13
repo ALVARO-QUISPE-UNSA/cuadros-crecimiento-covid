@@ -2,6 +2,7 @@
 //npm install express -E
 
 const express = require('express');
+const datos_departamentos = require('./data.json');
 const app = express();
 const path = require('path');
 const PORT = process.env.PORT ?? 3000;
@@ -20,6 +21,7 @@ app.use(express.static('public'));
 
 app.post('/consulta', (req, res) => {
   const {departamento, dimension} = req.body;
+  console.log(datos_departamentos);
 });
 
 //app.get('/', (req, res) => {

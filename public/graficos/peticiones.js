@@ -1,3 +1,32 @@
+//
+//function solicitud() {
+//  console.log('Se intentará solicitar');
+//  const postData = {
+//    departamento: 'Amazonas',
+//    parámetro: 'confirmados',
+//  };
+//  const request = {
+//    method: 'POST',
+//    headers: {
+//      'Content-Type': 'application/json'
+//    },
+//    body: JSON.stringify(postData)
+//  };
+//
+//  fetch('http://localhost:3000/consulta', request)
+//    .then(response => {
+//      if (!response.ok) throw new Error('Error al intentar obtener los datos');
+//      return response.json();
+//    })
+//    .then(datos => {
+//      console.log(datos);
+//    })
+//    .catch(error => {
+//      console.error('Error: ', error);
+//    });
+//}
+// Datos de casos de COVID-19 en Perú por meses
+
 // Datos de casos de COVID-19 en Perú por meses
 const ejex = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 const casosPorMes = {
