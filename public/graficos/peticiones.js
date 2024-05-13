@@ -1,9 +1,8 @@
-//
-function solicitud() {
+function solicitud(dep) {
   console.log('Se intentará solicitar');
+
   const postData = {
     departamento: 'Amazonas',
-    dimension: 'confirmados',
   };
   const request = {
     method: 'POST',
@@ -20,6 +19,7 @@ function solicitud() {
     })
     .then(datos => {
       console.log(datos);
+      return datos;
     })
     .catch(error => {
       console.error('Error: ', error);
@@ -28,9 +28,15 @@ function solicitud() {
 // Datos de casos de COVID-19 en Perú por meses
 
 // Datos de casos de COVID-19 en Perú por meses
-const ejex = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+let departamento = solicitud('Amazonas');
+console.log(departamento);
+let dimension = 'confirmed';
+let dato = 'date';
+//const ejex = departamento.find(dim => )
+const defaultx = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 const casosPorMes = {
-  labels: ejex,
+  labels: defaultx,
   datasets: [{
     label: 'Casos de COVID-19 en Perú por Meses',
     data: [3, 5, 100, 1000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000],
